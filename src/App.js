@@ -1,7 +1,7 @@
-// import './App.css';
+import './App.css';
 
-import React from 'React'
-import Item from './Item'
+import React from 'react';
+import Item from './Item';
 
 const list = [
   {
@@ -34,13 +34,21 @@ class App extends React.Component {
     this.state = {
       list
     }
+
+    this.onCheck = this.onCheck.bind(this);
   }
+
+  onCheck = item => {
+    console.log(item);
+  }
+
   render() {
     return (
       <div className='app'>
         <ul className='app__main-list'>
           <Item
             list={list}
+            onCheck={this.onCheck}
           />
         </ul>
       </div>
